@@ -13,8 +13,8 @@ export default function Notification() {
 
     return (
         <>
-            <div>
-               <p>Message at {message} seconds</p>
+            <div >
+               <h1>Message at {message} seconds</h1>
             </div>
         </>
     )

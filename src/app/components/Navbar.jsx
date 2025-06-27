@@ -1,17 +1,27 @@
-"use client"
-import Link from "next/link";
+"use client";
+import React from "react";
 import { useRouter } from "next/navigation";
 
-const Navbar = () => {
+const availableAssignments = [1, 2, 4];
+
+export default function Navbar() {
   const router = useRouter();
 
-  return (
-    <nav style={{ marginBottom: "20px" }}>
-      <Link href="/assignment1" >Assignment 1</Link>
-      <Link href="/assignment2" >Assignment 2</Link>
-      <Link href="/assignment3" >Assignment 3</Link>
-    </nav>
-  );
-};
+  const handleOnClick = (fileNo) => {
+    if (availableAssignments.includes(fileNo)) {
+      router.push(`/assignment${fileNo}`);
+    } else {
+      router.push("/not-found");
+    }
+  };
 
-export default Navbar;
+  return (
+    <div>
+      {[1, 2, 3, 4, 5, 6].map((num) => (
+        <button key={num} onClick={() => handleOnClick(num)}>
+          Assignment {num}
+        </button>
+      ))}
+    </div>
+  );
+}

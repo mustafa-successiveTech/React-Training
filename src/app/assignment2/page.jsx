@@ -19,7 +19,7 @@ import Question16 from "./question16/page";
 import Question17 from "./question17/page";
 import Question18 from "./question18/page";
 import Question19 from "./question19/page";
-
+import './assignment2.css';
 
 
 export default function Assignment2() {

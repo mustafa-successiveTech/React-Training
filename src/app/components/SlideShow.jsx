@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const images = Array.from({ length: 7 }, (_, i) => `./Images/image${i + 1}.jpg`);
+const images = Array.from({ length: 10 }, (_, i) => `./Images/image${i + 1}.jpg`);
 
 export default function Slideshow() {
   const [currentSlide, setCurrentSlide] = useState(1);

@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function useClipboard(text) {
   const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = () => {
+  const copyToClipboard = (text) => {
     const textarea = document.createElement('textarea');
     textarea.value = text;
     textarea.setAttribute('readonly', '');
