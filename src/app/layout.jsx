@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./context/ThemeContext";
 
 export default function RootLayout({ children }) {
   return (
@@ -7,7 +6,7 @@ export default function RootLayout({ children }) {
       <body className="parent">
       
           <div>
-              <div>
+            <div>
               <Navbar/>
             </div>
             <div>
