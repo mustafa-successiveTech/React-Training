@@ -1,11 +1,11 @@
 "use client"
 import { useState } from "react";
-import Question1 from "./Question1/page";
-import Question2 from "./Question2/page";
-import Question3 from "./Question3/page";
-import Question4 from "./Question4/page";
-import Question5 from "./Question5/page";
-import Question6 from "./Question6/page";
+import Question1 from "./question1/page";
+import Question2 from "./question2/page";
+import Question3 from "./question3/page";
+import Question4 from "./question4/page";
+import Question5 from "./question5/page";
+import Question6 from "./question6/page";
 import './assignment1.css';
 
 export default function Assignment1() {
