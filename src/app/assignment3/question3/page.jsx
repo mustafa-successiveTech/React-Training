@@ -11,9 +11,9 @@ export default function Question3() {
             Add a "404 Not Found" page for any invalid routes.
           </h3>
           <h1>Welcome to Question 3</h1>
-          <Link href="assignment3/question3/home">Go to Home</Link>    {/* goes to /assignment3/question3/home */}
+          <Link href="assignment3/question3/home">Go to Home</Link>    
           <br />
-          <Link href="assignment3/question3/about">Go to About</Link>  {/* goes to /assignment3/question3/about */}
+          <Link href="assignment3/question3/about">Go to About</Link> 
       </div>
   )
 };
