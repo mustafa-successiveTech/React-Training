@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import ParentComponent2 from "@/app/components/ParentComponent2";
 
 export default function Question2() {
@@ -17,4 +15,3 @@ export default function Question2() {
       </div>
   )
 };
->>>>>>> Stashed changes
