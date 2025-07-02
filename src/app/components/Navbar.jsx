@@ -2,7 +2,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-const availableAssignments = [1, 2, 4];
+const availableAssignments = [1, 2, 3, 4, 5];
 
 export default function Navbar() {
   const router = useRouter();
