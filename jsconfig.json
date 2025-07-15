@@ -1,8 +1,8 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",                // Required for "paths" to work
-    "paths": {
-      "@/*": ["src/*"]             // Shortcut '@/' to 'src/' folder
-    }
-  }
-}
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",                // Required for "paths" to work
+//     "paths": {
+//       "@/*": ["src/*"]             // Shortcut '@/' to 'src/' folder
+//     }
+//   }
+// }
