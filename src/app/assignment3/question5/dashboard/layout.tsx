@@ -1,7 +1,12 @@
 "use client";
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export default function DashboardLayout({ children }) {
+interface DashboardLayoutProps {
+  children: ReactNode;
+}
+
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="parent">
       <h2>Dashboard Section</h2>
