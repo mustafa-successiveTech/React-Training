@@ -2,20 +2,18 @@ import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import LanguageProvider from "@/app/context/LanguageContext";
 
 export default function Question10() {
-  
   return (
-      <>
-          <h3>
-              10. Develop a language switcher application using the useContext hook.
-              Create a context to manage the current language (e.g., English or Spanish).
-              Provide buttons to switch between languages.
-              Use the useContext hook to access the current language value.
-              Display different language versions of the application's content.
-          </h3>
-          <LanguageProvider>
-                  <LanguageSwitcher />   
-          </LanguageProvider>       
-      </>
-      
-  )
+    <>
+      <h3>
+        10. Develop a language switcher application using the useContext hook.
+        Create a context to manage the current language (e.g., English or
+        Spanish). Provide buttons to switch between languages. Use the
+        useContext hook to access the current language value. Display different
+        language versions of the application's content.
+      </h3>
+      <LanguageProvider>
+        <LanguageSwitcher />
+      </LanguageProvider>
+    </>
+  );
 }

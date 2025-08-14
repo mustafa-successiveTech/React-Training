@@ -16,7 +16,7 @@ export function ThemeProvider({ children }: ThemeProviderType) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const toggleTheme = () =>
-    setTheme((prev) => ( prev === "light" ? "dark" : "light" ));
+    setTheme(prev => prev === "light" ? "dark" : "light");
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

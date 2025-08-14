@@ -11,9 +11,14 @@ import {
   TableSortLabel,
   Paper,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 
-const sampleData = [
+interface RowData {
+  name: string;
+  age: number;
+}
+
+const sampleData: RowData[] = [
   { name: "Alice", age: 24 },
   { name: "Bob", age: 30 },
   { name: "Charlie", age: 22 },
@@ -22,26 +27,29 @@ const sampleData = [
 ];
 
 export default function MuiDataTable() {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(3);
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [page, setPage] = useState<number>(0);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(3);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
   const handleSort = () => {
-    setSortOrder(prev => (prev === "asc" ? "desc" : "asc"));
+    setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
   };
 
-  const handleChangePage = (_, newPage) => setPage(newPage);
+  const handleChangePage = (
+    _: MouseEvent<HTMLButtonElement> | null,
+    newPage: number
+  ) => setPage(newPage);
 
-  const handleChangeRowsPerPage = (e) => {
+  const handleChangeRowsPerPage = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setRowsPerPage(parseInt(e.target.value, 10));
     setPage(0);
   };
 
-  const sortedData = [...sampleData].sort((a, b) => {
-    return sortOrder === "asc"
-      ? a.age - b.age
-      : b.age - a.age;
-  });
+  const sortedData = [...sampleData].sort((a, b) =>
+    sortOrder === "asc" ? a.age - b.age : b.age - a.age
+  );
 
   const paginatedData = sortedData.slice(
     page * rowsPerPage,

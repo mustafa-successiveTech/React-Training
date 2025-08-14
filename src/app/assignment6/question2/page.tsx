@@ -1,4 +1,4 @@
-import Counter from "@/components/Counter";
+import Counter from "@/app/components/Counter";
 
 export default function Question3() {
     return (

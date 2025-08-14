@@ -26,9 +26,8 @@ export const CartProvider = ({ children }: CartProviderType) => {
 
   const addItemToCart = (product: Product) => {
     setCart((prevCart) => {
-      const existingProductIndex = prevCart.findIndex(
-        (item) => item.id === product.id
-      );
+      const existingProductIndex = prevCart.findIndex( item => item.id === product.id );
+      
       if (existingProductIndex !== -1) {
         const updatedCart = [...prevCart];
         const existingProduct = updatedCart[existingProductIndex];
@@ -57,10 +56,10 @@ export const CartProvider = ({ children }: CartProviderType) => {
     });
   };
 
-  const totalPrice : number = cart.reduce(
+  const totalPrice: number = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
-  ) ;
+  );
 
   return (
     <CartContext.Provider

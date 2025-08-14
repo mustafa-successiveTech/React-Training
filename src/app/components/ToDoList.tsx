@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 type Todo = {
@@ -8,42 +8,42 @@ type Todo = {
 };
 
 const ToDoList = () => {
-  const [todos, setTodos] = useState<Todo[]>([]); 
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [newTask, setnewTask] = useState<string>();
 
   const addTodo = () => {
-     if (newTask.trim() === "") return;
+    if (newTask.trim() === "") return;
 
     const newTodo = {
       id: Date.now(),
       task: newTask,
-      completed: false
+      completed: false,
     };
     setTodos([...todos, newTodo]);
     setnewTask("");
   };
 
-  const toggleCompleted = (id : number) => {
+  const toggleCompleted = (id: number) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
   };
 
-  const deleteTodo = (id : number) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
+  const deleteTodo = (id: number) => {
+    const updatedTodos = todos.filter(todo => todo.id !== id);
     setTodos(updatedTodos);
   };
 
   return (
     <div>
       <h2>My Todo List</h2>
-      <input 
-        type="text" 
-        placeholder="Add task" 
-        value={newTask} 
+      <input
+        type="text"
+        placeholder="Add task"
+        value={newTask}
         onChange={(e) => {
-            setnewTask(e.target.value)
+          setnewTask(e.target.value);
         }}
       />
 
@@ -52,14 +52,9 @@ const ToDoList = () => {
       {todos.length === 0 ? (
         <p>No tasks yet.</p>
       ) : (
-        <ul 
-            
-            >
+        <ul>
           {todos.map((todo) => (
-            <li 
-                key={todo.id}      
-                style={{ padding: "10px" , margin: "20px"}}         
-                >
+            <li key={todo.id} style={{ padding: "10px", margin: "20px" }}>
               <input
                 type="checkbox"
                 checked={todo.completed}
@@ -67,7 +62,9 @@ const ToDoList = () => {
               />
               <span
                 style={{
-                  textDecoration: todo.completed ? "line-through" : "none" , padding: "10px" , margin: "10px"
+                  textDecoration: todo.completed ? "line-through" : "none",
+                  padding: "10px",
+                  margin: "10px",
                 }}
               >
                 {todo.task}

@@ -3,21 +3,32 @@ import { useState } from 'react';
 import ButtonReusable from '../components/ButtonReusable';
 
 export default function ButtonDemoPage() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState<string>(''); 
 
   return (
     <div>
       <h1>Reusable Button Demo</h1>
 
-      <ButtonReusable type="primary" onClick={() => setMessage('Primary clicked!')}>
+      <ButtonReusable
+        type="primary"
+        onClick={() => setMessage('Primary clicked!')}
+      >
         Primary
       </ButtonReusable>
 
-      <ButtonReusable type="secondary" onClick={() => setMessage('Secondary clicked!')} style={{ marginLeft: 10 }}>
+      <ButtonReusable
+        type="secondary"
+        onClick={() => setMessage('Secondary clicked!')}
+        style={{ marginLeft: 10 }}
+      >
         Secondary
       </ButtonReusable>
 
-      <ButtonReusable type="danger" onClick={() => setMessage('Danger clicked!')} style={{ marginLeft: 10 }}>
+      <ButtonReusable
+        type="danger"
+        onClick={() => setMessage('Danger clicked!')}
+        style={{ marginLeft: 10 }}
+      >
         Danger
       </ButtonReusable>
 

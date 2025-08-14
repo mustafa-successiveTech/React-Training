@@ -6,7 +6,7 @@ export default function CountdownTimer() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
-      <h2>⏱ Countdown Timer</h2>
+      <h2>Countdown Timer</h2>
       <h1>{timeLeft} sec</h1>
       <p>Status: {isRunning ? "Running" : "Stopped"}</p>
       <button onClick={start}>Start</button>

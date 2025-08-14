@@ -2,8 +2,7 @@ import React from "react";
 import useClipboard from "../customHook/useClipboard";
 
 export default function ClipBoard() {
-  const { 
-    copyToClipboard , copied } = useClipboard();
+  const { copyToClipboard, copied } = useClipboard();
 
   return (
     <div>

@@ -5,9 +5,9 @@ export default function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
 
   const styles = {
-    light: { backgroundColor: "#fff", color: "#333", },
+    light: { backgroundColor: "#fff", color: "#333" },
 
-    dark: { backgroundColor: "#333", color: "#fff", }
+    dark: { backgroundColor: "#333", color: "#fff" },
   };
 
   return (

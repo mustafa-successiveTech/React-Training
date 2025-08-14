@@ -1,18 +1,32 @@
-'use client';
 import React from 'react';
 
-const styles = {
-  base: 'px-4 py-2 rounded text-white font-semibold',
-  primary: 'bg-blue-600 hover:bg-blue-700',
-  secondary: 'bg-gray-600 hover:bg-gray-700',
-  danger: 'bg-red-600 hover:bg-red-700',
+type ButtonReusableProps = {
+  type?: 'primary' | 'secondary' | 'danger';
+  onClick: () => void;
+  children: React.ReactNode;
+  style?: React.CSSProperties; 
 };
 
-export default function ButtonReusable({ type = 'primary', onClick, children }) {
-  const className = `${styles.base} ${styles[type] || styles.primary}`;
-
+export default function ButtonReusable({
+  type = 'primary',
+  onClick,
+  children,
+  style,
+}: ButtonReusableProps) {
   return (
-    <button onClick={onClick} className={className}>
+    <button
+      onClick={onClick}
+      style={{
+        padding: '10px 15px',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        ...(type === 'primary' && { backgroundColor: 'blue', color: 'white' }),
+        ...(type === 'secondary' && { backgroundColor: 'gray', color: 'white' }),
+        ...(type === 'danger' && { backgroundColor: 'red', color: 'white' }),
+        ...style, 
+      }}
+    >
       {children}
     </button>
   );

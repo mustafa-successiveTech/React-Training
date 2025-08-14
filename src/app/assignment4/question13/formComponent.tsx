@@ -1,28 +1,63 @@
 "use client";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import validationSchema from './validationSchema';
+
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import validationSchema from "./validationSchema";
+
+interface FormValues {
+  email: string;
+  password: string;
+  phone: string;
+}
 
 export default function FormComponent() {
+  const initialValues: FormValues = {
+    email: "",
+    password: "",
+    phone: "",
+  };
+
+  const handleSubmit = (
+    values: FormValues,
+    actions: FormikHelpers<FormValues>
+  ) => {
+    console.log("Submitted Data:", values);
+    actions.setSubmitting(false);
+  };
+
   return (
     <Formik
-      initialValues={{ email: '', password: '', phone: '' }}
+      initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
-        console.log("Submitted Data:", values);
-      }}
+      onSubmit={handleSubmit}
     >
-      <Form style={{ display: 'flex', flexDirection: 'column', width: 300, gap: 10 }}>
+      <Form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: 300,
+          gap: 10,
+        }}
+      >
         <label>Email:</label>
         <Field name="email" type="email" />
-        <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
+        <ErrorMessage
+          name="email"
+          render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+        />
 
         <label>Password:</label>
         <Field name="password" type="password" />
-        <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
+        <ErrorMessage
+          name="password"
+          render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+        />
 
         <label>Phone:</label>
-        <Field name="phone" />
-        <ErrorMessage name="phone" component="div" style={{ color: 'red' }} />
+        <Field name="phone" type="text" />
+        <ErrorMessage
+          name="phone"
+          render={(msg) => <div style={{ color: "red" }}>{msg}</div>}
+        />
 
         <button type="submit">Submit</button>
       </Form>

@@ -1,18 +1,20 @@
 import { useMemo, useState } from "react";
 
 type EmployeeType = {
-    name : string;
-    salary : number;
-}
+  name: string;
+  salary: number;
+};
 
-export default function EmployeeSalary() {
-  const [emp, setEmp] = useState<EmployeeType[]>([
+const initialData = [
     { name: "Aman", salary: 40000 },
     { name: "Zoya", salary: 45000 },
     { name: "Mustafa", salary: 50000 },
     { name: "Priya", salary: 42000 },
     { name: "Kabir", salary: 48000 },
-  ]);
+  ];
+
+export default function EmployeeSalary() {
+  const [emp, setEmp] = useState<EmployeeType[]>(initialData);
 
   const AvgSalary = useMemo(() => {
     const total = emp.reduce((acc, ele) => acc + ele.salary, 0);
@@ -32,7 +34,7 @@ export default function EmployeeSalary() {
     <>
       <h2>Employee List</h2>
       <ul>
-        {emp.map((e : EmployeeType, index : number) => (
+        {emp.map((e: EmployeeType, index: number) => (
           <li key={index}>
             {e.name} - ₹{e.salary}
           </li>

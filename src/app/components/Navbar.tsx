@@ -7,7 +7,7 @@ const availableAssignments = [1, 2, 3, 4, 5, 6, 7];
 export default function Navbar() {
   const router = useRouter();
 
-  const handleOnClick = (fileNo) => {
+  const handleOnClick = (fileNo : number) => {
     if (availableAssignments.includes(fileNo)) {
       router.push(`/assignment${fileNo}`);
     } else {

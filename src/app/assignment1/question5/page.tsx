@@ -1,7 +1,7 @@
 import TaskList from "@/app/components/TaskList";
 
 export default function Question5()  {
-  const taskNames = ["Buy groceries", "Study React", "Call friend"];
+  const taskName = ["Buy groceries", "Study React", "Call friend"];
 
   return (
     <>
@@ -11,7 +11,7 @@ export default function Question5()  {
         list item. Import and render the TaskList component in the App component
         with an array of tasks.
       </h3>
-      < TaskList taskNames={taskNames} />
+      < TaskList taskNames={taskName} />
     </>
   );
 }

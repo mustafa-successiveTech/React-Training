@@ -5,7 +5,7 @@ export default function Parent() {
   const [count, setCount] = useState<number>(0);
 
   const increment = useCallback(() => {
-    setCount((prev) => prev + 1);
+    setCount(prev => prev + 1);
   }, []);
 
   return (

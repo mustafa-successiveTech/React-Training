@@ -27,7 +27,7 @@ export default function PersonForm() {
           <input
             type="text"
             placeholder="Enter age : "
-            value={age}
+            value={ageNum}
             onChange={(e) => setAge(e.target.value)}
           />
         </div>

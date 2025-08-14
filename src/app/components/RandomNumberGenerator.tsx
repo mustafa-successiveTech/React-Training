@@ -5,7 +5,7 @@ export default function RandomNumberGenerator() {
   const [randomNumber, setRandomNumber] = useState<number>(50);
 
   const updateNumber = () => {
-    const num = Math.floor(Math.random() * 100) ;
+    const num = Math.floor(Math.random() * 100);
     setRandomNumber(num);
   };
 

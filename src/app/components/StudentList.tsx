@@ -10,12 +10,12 @@ export default function StudentList() {
   const [newName, setNewName] = useState<string>("");
 
   const memoizedStudents = useMemo(() => {
-    return students;
+    return [...students].sort();
   }, [students]);
 
   const addStudent = () => {
     if (newName.trim() !== "") {
-      setStudents((prev) => [...prev, newName.trim()]);
+      setStudents(prev => [...prev, newName.trim()]);
       setNewName("");
     }
   };

@@ -1,4 +1,4 @@
-import Button from "@/app/components/Button";
+import Button from "@/app/components/PrimaryButton";
 import { useState } from "react";
 
 export default function Question6() {
